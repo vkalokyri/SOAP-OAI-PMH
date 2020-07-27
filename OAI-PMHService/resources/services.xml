@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This file was auto-generated from WSDL -->
+<!-- by the Apache Axis2 version: 1.6.1  Built on : Aug 31, 2011 (12:22:40 CEST) -->
+<serviceGroup>
+    <service name="OAI-PMHservice">
+        <messageReceivers>
+            <messageReceiver mep="http://www.w3.org/ns/wsdl/in-out" class="org.netbeans.j2ee.wsdl.oai_pmhservice.meta_inf.oai_pmhservice.OAIPMHserviceMessageReceiverInOut"/>
+        </messageReceivers>
+        <parameter name="ServiceClass">org.netbeans.j2ee.wsdl.oai_pmhservice.meta_inf.oai_pmhservice.OAIPMHserviceSkeleton</parameter>
+        <parameter name="useOriginalwsdl">true</parameter>
+        <parameter name="modifyUserWSDLPortAddress">true</parameter>
+        <operation name="GetRecord" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://j2ee.netbeans.org/wsdl/OAI-PMHservice/META-INF/OAI-PMHservice">
+            <actionMapping>http://j2ee.netbeans.org/wsdl/OAI-PMHservice/META-INF/OAI-PMHservice/OAI-PMHservicePortType/GetRecordRequest</actionMapping>
+            <outputActionMapping>http://j2ee.netbeans.org/wsdl/OAI-PMHservice/META-INF/OAI-PMHservice/OAI-PMHservicePortType/GetRecordResponse</outputActionMapping>
+            <faultActionMapping faultName="GetRecordError">http://j2ee.netbeans.org/wsdl/OAI-PMHservice/META-INF/OAI-PMHservice/OAI-PMHservicePortType/GetRecord/Fault/GetRecordError</faultActionMapping>
+            <faultActionMapping faultName="ErrorResp">http://j2ee.netbeans.org/wsdl/OAI-PMHservice/META-INF/OAI-PMHservice/OAI-PMHservicePortType/GetRecord/Fault/GetRecordError</faultActionMapping>
+            <faultActionMapping faultName="ErrorResp_Exception">http://j2ee.netbeans.org/wsdl/OAI-PMHservice/META-INF/OAI-PMHservice/OAI-PMHservicePortType/GetRecord/Fault/GetRecordError</faultActionMapping>
+        </operation>
+        <operation name="ListMetadataFormats" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://j2ee.netbeans.org/wsdl/OAI-PMHservice/META-INF/OAI-PMHservice">
+            <actionMapping>http://j2ee.netbeans.org/wsdl/OAI-PMHservice/META-INF/OAI-PMHservice/OAI-PMHservicePortType/ListMetadataFormatsRequest</actionMapping>
+            <outputActionMapping>http://j2ee.netbeans.org/wsdl/OAI-PMHservice/META-INF/OAI-PMHservice/OAI-PMHservicePortType/ListMetadataFormatsResponse</outputActionMapping>
+            <faultActionMapping faultName="ListMetadataFormatsError">http://j2ee.netbeans.org/wsdl/OAI-PMHservice/META-INF/OAI-PMHservice/OAI-PMHservicePortType/ListMetadataFormats/Fault/ListMetadataFormatsError</faultActionMapping>
+            <faultActionMapping faultName="ErrorResp">http://j2ee.netbeans.org/wsdl/OAI-PMHservice/META-INF/OAI-PMHservice/OAI-PMHservicePortType/ListMetadataFormats/Fault/ListMetadataFormatsError</faultActionMapping>
+            <faultActionMapping faultName="ErrorResp_Exception">http://j2ee.netbeans.org/wsdl/OAI-PMHservice/META-INF/OAI-PMHservice/OAI-PMHservicePortType/ListMetadataFormats/Fault/ListMetadataFormatsError</faultActionMapping>
+        </operation>
+        <operation name="ListSets" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://j2ee.netbeans.org/wsdl/OAI-PMHservice/META-INF/OAI-PMHservice">
+            <actionMapping>http://j2ee.netbeans.org/wsdl/OAI-PMHservice/META-INF/OAI-PMHservice/OAI-PMHservicePortType/ListSetsRequest</actionMapping>
+            <outputActionMapping>http://j2ee.netbeans.org/wsdl/OAI-PMHservice/META-INF/OAI-PMHservice/OAI-PMHservicePortType/ListSetsResponse</outputActionMapping>
+            <faultActionMapping faultName="ListSetsError">http://j2ee.netbeans.org/wsdl/OAI-PMHservice/META-INF/OAI-PMHservice/OAI-PMHservicePortType/ListSets/Fault/ListSetsError</faultActionMapping>
+            <faultActionMapping faultName="ErrorResp">http://j2ee.netbeans.org/wsdl/OAI-PMHservice/META-INF/OAI-PMHservice/OAI-PMHservicePortType/ListSets/Fault/ListSetsError</faultActionMapping>
+            <faultActionMapping faultName="ErrorResp_Exception">http://j2ee.netbeans.org/wsdl/OAI-PMHservice/META-INF/OAI-PMHservice/OAI-PMHservicePortType/ListSets/Fault/ListSetsError</faultActionMapping>
+        </operation>
+        <operation name="ListIdentifiers" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://j2ee.netbeans.org/wsdl/OAI-PMHservice/META-INF/OAI-PMHservice">
+            <actionMapping>http://j2ee.netbeans.org/wsdl/OAI-PMHservice/META-INF/OAI-PMHservice/OAI-PMHservicePortType/ListIdentifiersRequest</actionMapping>
+            <outputActionMapping>http://j2ee.netbeans.org/wsdl/OAI-PMHservice/META-INF/OAI-PMHservice/OAI-PMHservicePortType/ListIdentifiersResponse</outputActionMapping>
+            <faultActionMapping faultName="ListIdentifiersError">http://j2ee.netbeans.org/wsdl/OAI-PMHservice/META-INF/OAI-PMHservice/OAI-PMHservicePortType/ListIdentifiers/Fault/ListIdentifiersError</faultActionMapping>
+            <faultActionMapping faultName="ErrorResp">http://j2ee.netbeans.org/wsdl/OAI-PMHservice/META-INF/OAI-PMHservice/OAI-PMHservicePortType/ListIdentifiers/Fault/ListIdentifiersError</faultActionMapping>
+            <faultActionMapping faultName="ErrorResp_Exception">http://j2ee.netbeans.org/wsdl/OAI-PMHservice/META-INF/OAI-PMHservice/OAI-PMHservicePortType/ListIdentifiers/Fault/ListIdentifiersError</faultActionMapping>
+        </operation>
+        <operation name="Identify" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://j2ee.netbeans.org/wsdl/OAI-PMHservice/META-INF/OAI-PMHservice">
+            <actionMapping>http://j2ee.netbeans.org/wsdl/OAI-PMHservice/META-INF/OAI-PMHservice/OAI-PMHservicePortType/IdentifyRequest</actionMapping>
+            <outputActionMapping>http://j2ee.netbeans.org/wsdl/OAI-PMHservice/META-INF/OAI-PMHservice/OAI-PMHservicePortType/IdentifyResponse</outputActionMapping>
+            <faultActionMapping faultName="IdentifyError">http://j2ee.netbeans.org/wsdl/OAI-PMHservice/META-INF/OAI-PMHservice/OAI-PMHservicePortType/Identify/Fault/IdentifyError</faultActionMapping>
+            <faultActionMapping faultName="ErrorResp">http://j2ee.netbeans.org/wsdl/OAI-PMHservice/META-INF/OAI-PMHservice/OAI-PMHservicePortType/Identify/Fault/IdentifyError</faultActionMapping>
+            <faultActionMapping faultName="ErrorResp_Exception">http://j2ee.netbeans.org/wsdl/OAI-PMHservice/META-INF/OAI-PMHservice/OAI-PMHservicePortType/Identify/Fault/IdentifyError</faultActionMapping>
+        </operation>
+        <operation name="ListRecords" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://j2ee.netbeans.org/wsdl/OAI-PMHservice/META-INF/OAI-PMHservice">
+            <actionMapping>http://j2ee.netbeans.org/wsdl/OAI-PMHservice/META-INF/OAI-PMHservice/OAI-PMHservicePortType/ListRecordsRequest</actionMapping>
+            <outputActionMapping>http://j2ee.netbeans.org/wsdl/OAI-PMHservice/META-INF/OAI-PMHservice/OAI-PMHservicePortType/ListRecordsResponse</outputActionMapping>
+            <faultActionMapping faultName="ListRecordsError">http://j2ee.netbeans.org/wsdl/OAI-PMHservice/META-INF/OAI-PMHservice/OAI-PMHservicePortType/ListRecords/Fault/ListRecordsError</faultActionMapping>
+            <faultActionMapping faultName="ErrorResp">http://j2ee.netbeans.org/wsdl/OAI-PMHservice/META-INF/OAI-PMHservice/OAI-PMHservicePortType/ListRecords/Fault/ListRecordsError</faultActionMapping>
+            <faultActionMapping faultName="ErrorResp_Exception">http://j2ee.netbeans.org/wsdl/OAI-PMHservice/META-INF/OAI-PMHservice/OAI-PMHservicePortType/ListRecords/Fault/ListRecordsError</faultActionMapping>
+        </operation>
+    </service>
+</serviceGroup>

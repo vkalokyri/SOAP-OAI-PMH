@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions name="OAI-PMHservice"
+    targetNamespace="http://j2ee.netbeans.org/wsdl/OAI-PMHservice/META-INF/OAI-PMHservice"
+    xmlns="http://schemas.xmlsoap.org/wsdl/"
+    xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+    xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" 
+    xmlns:oai="http://www.openarchives.org/OAI/2.0/"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:wtns="http://j2ee.netbeans.org/wsdl/OAI-PMHservice/META-INF/OAI-PMHservice"
+    xmlns:xtns="http://j2ee.netbeans.org/xsd/OAI-PMHservice/META-INF/OAI-PMHservice">
+     
+    <types>        
+        <xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified"
+                   targetNamespace="http://j2ee.netbeans.org/xsd/OAI-PMHservice/META-INF/OAI-PMHservice">
+            <xs:import namespace="http://www.openarchives.org/OAI/2.0/" schemaLocation="OAI-PMH.xsd"/>
+            <xs:element name="resumptionToken" type="xs:string"/>
+            <xs:element name="IdentifyRequest"/>                    
+            <xs:element name="ListMetadataFormatsRequest">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="identifier" type="xs:anyURI" minOccurs="0" maxOccurs="1"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>           
+            <xs:element name="ListSetsRequest">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element ref="xtns:resumptionToken" minOccurs="0"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>            
+            <xs:element name="GetRecordRequest">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="identifier" type="xs:anyURI"/>
+                        <xs:element name="metadataPrefix" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>            
+            <xs:element name="ListIdentifiersRequest">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:group ref="xtns:exclusiveArguments"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>            
+            <xs:element name="ListRecordsRequest">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:group ref="xtns:exclusiveArguments"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:group name="exclusiveArguments">
+                <xs:choice>
+                    <xs:element ref="xtns:resumptionToken"/>
+                    <xs:sequence>
+                        <xs:element name="from" type="oai:UTCdatetimeType" minOccurs="0"/>
+                        <xs:element name="until" type="oai:UTCdatetimeType" minOccurs="0"/>
+                        <xs:element name="metadataPrefix" type="oai:metadataPrefixType"/>
+                        <xs:element name="set" type="oai:setSpecType" minOccurs="0"/>
+                    </xs:sequence>
+                </xs:choice>
+            </xs:group>
+        </xs:schema>
+    </types>
+    <message name="ErrorResp">
+        <part name="ErrorResponse" element="oai:OAI-PMH"/>
+    </message>
+    <message name="IdentifyReq">
+        <part name="IdentifyRequest" element="xtns:IdentifyRequest"/>
+    </message>
+    <message name="IdentifyResp">
+        <part name="IdentifyResponse" element="oai:OAI-PMH"/>
+    </message>
+    <message name="ListMetadataFormatsReq">
+        <part name="ListMetadataFormatsRequest" element="xtns:ListMetadataFormatsRequest"/>
+    </message>
+    <message name="ListMetadataFormatsResp">
+        <part name="ListMetadataFormatsResponse" element="oai:OAI-PMH"/>
+    </message>
+    <message name="ListSetsReq">
+        <part name="ListSetsRequest" element="xtns:ListSetsRequest"/>
+    </message>
+    <message name="ListSetsResp">
+        <part name="ListSetsResponse" element="oai:OAI-PMH"/>
+    </message>
+    <message name="ListIdentifiersReq">
+        <part name="ListIdentifiersRequest" element="xtns:ListIdentifiersRequest"/>
+    </message>
+    <message name="ListIdentifiersResp">
+        <part name="ListIdentifiersResponse" element="oai:OAI-PMH"/>
+    </message>
+    <message name="GetRecordReq">
+        <part name="GetRecordRequest" element="xtns:GetRecordRequest"/>
+    </message>
+    <message name="GetRecordResp">
+        <part name="GetRecordResponse" element="oai:OAI-PMH"/>
+    </message>    
+    <message name="ListRecordsReq">
+        <part name="ListRecordsRequest" element="xtns:ListRecordsRequest"/>
+    </message>
+    <message name="ListRecordsResp">
+        <part name="ListRecordsResponse" element="oai:OAI-PMH"/>
+    </message>    
+    <portType name="OAI-PMHservicePortType">
+        <!-- Identify verb -->
+        <operation name="Identify">
+            <input message="wtns:IdentifyReq"/>
+            <output message="wtns:IdentifyResp"/>
+            <fault name="IdentifyError" message="wtns:ErrorResp"/>
+        </operation>
+        <!-- ListMetadataFormats verb -->
+        <operation name="ListMetadataFormats">
+            <input message="wtns:ListMetadataFormatsReq"/>
+            <output message="wtns:ListMetadataFormatsResp"/>
+            <fault name="ListMetadataFormatsError" message="wtns:ErrorResp"/>
+        </operation>
+        <!-- ListSets verb -->
+        <operation name="ListSets">
+            <input message="wtns:ListSetsReq"/>
+            <output message="wtns:ListSetsResp"/>
+            <fault name="ListSetsError" message="wtns:ErrorResp"/>
+        </operation>
+        <!-- GetRecord verb -->
+        <operation name="GetRecord">
+            <input message="wtns:GetRecordReq"/>
+            <output message="wtns:GetRecordResp"/>
+            <fault name="GetRecordError" message="wtns:ErrorResp"/>
+        </operation>
+        <!-- ListIdentifiers verb -->
+        <operation name="ListIdentifiers">
+            <input message="wtns:ListIdentifiersReq"/>
+            <output message="wtns:ListIdentifiersResp"/>
+            <fault name="ListIdentifiersError" message="wtns:ErrorResp"/>
+        </operation>
+        <!-- ListRecords verb -->
+        <operation name="ListRecords">
+            <input message="wtns:ListRecordsReq"/>
+            <output message="wtns:ListRecordsResp"/>
+            <fault name="ListRecordsError" message="wtns:ErrorResp"/>
+        </operation>
+    </portType>
+    <binding name="OAI-PMHserviceBinding" type="wtns:OAI-PMHservicePortType">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <!-- Identify verb -->
+        <operation name="Identify">
+            <soap:operation/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="IdentifyError">
+                <soap:fault name="IdentifyError" use="literal"/>
+            </fault>
+        </operation>
+        <!-- ListMetadataFormats verb -->
+        <operation name="ListMetadataFormats">
+            <soap:operation/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="ListMetadataFormatsError">
+                <soap:fault name="ListMetadataFormatsError" use="literal"/>
+            </fault>
+        </operation>
+        <!-- ListSets verb -->
+        <operation name="ListSets">
+            <soap:operation/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="ListSetsError">
+                <soap:fault name="ListSetsError" use="literal"/>
+            </fault>
+        </operation>
+        <!-- GetRecord verb -->
+        <operation name="GetRecord">
+            <soap:operation/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="GetRecordError">
+                <soap:fault name="GetRecordError" use="literal"/>
+            </fault>
+        </operation>
+        <!-- ListIdentifiers verb (with resume version) -->
+        <operation name="ListIdentifiers">
+            <soap:operation/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="ListIdentifiersError">
+                <soap:fault name="ListIdentifiersError" use="literal"/>
+            </fault>
+        </operation>
+        <!-- ListRecords verb -->
+        <operation name="ListRecords">
+            <soap:operation/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="ListRecordsError">
+                <soap:fault name="ListRecordsError" use="literal"/>
+            </fault>
+        </operation>
+    </binding>
+    <service name="OAI-PMHservice">
+        <port name="OAI-PMHport" binding="wtns:OAI-PMHserviceBinding">
+            <soap:address location="http://localhost:8080/OAI-PMHservice/OAI-PMHport"/>
+        </port>
+    </service>
+
+</definitions>
